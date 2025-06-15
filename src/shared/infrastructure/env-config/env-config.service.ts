@@ -1,10 +1,12 @@
 import { ConfigService } from '@nestjs/config';
 import { EnvConfig } from './env-config.interface';
+import { Injectable } from '@nestjs/common';
 
+@Injectable()
 export class EnvConfigService implements EnvConfig {
   constructor(private configService: ConfigService) {}
-  getJwtSecret(): string {
-    throw new Error('Method not implemented.');
+  getJwtSecret(): string | undefined {
+    return this.configService.get<string>('JWT_SECRET');
   }
   getJwtExpiresInSeconds(): number {
     throw new Error('Method not implemented.');
