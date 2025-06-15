@@ -24,4 +24,8 @@ describe('EnvConfigService unit tests', () => {
   it('should return the jwt secret variable', () => {
     expect(sut.getJwtSecret()).toBe('test_jwt');
   });
+
+  it('should return the jwt secret variable', () => {
+    expect(sut.getJwtSecret()).toBe('test_jwt');
+  });
 });
